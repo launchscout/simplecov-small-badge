@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'repo_small_badge/image'
-require 'simplecov_small_badge/configuration'
+require "repo_small_badge/image"
+require "simplecov_small_badge/configuration"
 
 module SimpleCovSmallBadge
   # Basic Badge Formater Class that creates the badges.
@@ -14,7 +14,7 @@ module SimpleCovSmallBadge
     def format(result)
       percent = result.source_files.covered_percent.round(0)
       @image = RepoSmallBadge::Image.new(map_image_config(state(percent)))
-      badge('total', 'total', percent)
+      badge("total", "total", percent)
       group_percent_from_result(result) do |name, title, cov_percent|
         badge(name, title, cov_percent.round(0))
       end
@@ -35,12 +35,12 @@ module SimpleCovSmallBadge
     def state(covered_percent)
       if line_coverage_minimum&.positive?
         if covered_percent >= line_coverage_minimum
-          'good'
+          "good"
         else
-          'bad'
+          "bad"
         end
       else
-        'unknown'
+        "unknown"
       end
     end
 
@@ -53,9 +53,9 @@ module SimpleCovSmallBadge
       hash = {}
       @config.to_hash.map do |key, value|
         key = key
-              .to_s.sub(/^coverage_background_#{state}/, 'value_background')
-              .to_sym
-        key = key.to_s.sub(/^coverage_/, 'value_').to_sym
+          .to_s.sub(/^coverage_background_#{state}/, "value_background")
+          .to_sym
+        key = key.to_s.sub(/^coverage_/, "value_").to_sym
         hash[key] = value
       end
       hash

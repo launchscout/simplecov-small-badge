@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'simplecov'
-require 'byebug'
+require "simplecov"
+require "byebug"
 
 module SimpleCovSmallBadge
   class Formatter
@@ -19,11 +19,11 @@ end
 
 SimpleCov.minimum_coverage 100
 
-require 'simplecov_small_badge'
-require 'rubygems'
-require 'bundler/setup'
+require "simplecov_small_badge"
+require "rubygems"
+require "bundler/setup"
 
-Dir[File.join('./spec/support/*.rb')].sort.each { |f| require f }
+Dir[File.join("./spec/support/*.rb")].sort.each { |f| require f }
 
 SimpleCovSmallBadge.configure do |config|
   # config.rounded_border = false
