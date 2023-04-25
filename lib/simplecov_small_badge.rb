@@ -23,5 +23,4 @@ module SimpleCovSmallBadge
 end
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__)))
-require 'simplecov_small_badge/version'
 require 'simplecov_small_badge/formatter'

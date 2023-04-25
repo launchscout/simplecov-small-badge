@@ -1,18 +1,17 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.push File.expand_path('lib', __dir__)
-require 'simplecov_small_badge/version'
+version = File.read(File.expand_path('VERSION', __dir__)).strip
 
 Gem::Specification.new do |s|
   s.required_ruby_version = '>=2.5.0'
   s.name        = 'simplecov-small-badge'
-  s.version     = SimpleCovSmallBadge::VERSION
+  s.version     = version
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ['Marc Grimme']
-  s.email       = ['marc.grimme at gmail dot com']
+  s.authors     = ['Marc Grimme', "Bill Barnett"]
+  s.email       = ['marc.grimme at gmail dot com', "bill@launchscout.com"]
   s.license     = 'MIT'
-  s.homepage    = 'https://github.com/marcgrimme/simplecov-small-badge'
-  s.summary     = %(Small Badge generator for SimpleCov coverage tool for ruby)
+  s.homepage    = 'https://github.com/launchscout/simplecov-small-badge'
+  s.summary     = %(Small Badge generator for SimpleCov coverage tool for Ruby)
 
   s.rubyforge_project = 'simplecov-small-badge'
 

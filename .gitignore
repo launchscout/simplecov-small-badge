@@ -3,12 +3,12 @@
 Gemfile.lock
 
 ## PROJECT::GENERAL
+coverage
 rdoc
 pkg
 .sass-cache
 *.gem
 
 ## PROJECT::SPECIFIC
-
 vendor
 .byebug_history
